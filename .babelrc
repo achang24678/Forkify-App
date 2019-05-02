@@ -1,0 +1,15 @@
+{
+    "presets": [ //collection of code transform plug-ins, code that actually apply the actual transformations to our code
+        [
+            "@babel/env", //environment we want to target
+            {
+                "targets": {
+                    "browsers": [
+                        "last 5 versions",//babel automatically figures out which ES6 features it actually needs to convert in order to work on the last five version of all the browsers
+                        "ie >= 8"
+                    ]
+                }
+            }
+        ]
+    ]
+}
