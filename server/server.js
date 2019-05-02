@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 const app = express();  // create an express applicaiton
-const publicPath = path.join(__dirname, '..', 'public');
+const publicPath = path.join(__dirname, '..', 'dist');
 const port = process.env.PORT || 3000; 
 // if this variable exists that means we are on Heroku and we do want to use the port value, if doesn't exxist, we use default 3000
 
