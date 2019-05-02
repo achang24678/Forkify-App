@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "forkify project",
   "main": "index.js",
+  "engines": {
+    "node": "11.10.1"
+  },
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "dev-server": "webpack-dev-server --mode development --open",
-    "heroku-postbuild": "yarn run build"
+    "heroku-postbuild": "yarn run build",
+    "start": "node server/server.js"
   },
   "author": "Allen Chang",
   "license": "ISC",
