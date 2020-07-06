@@ -1,21 +1,20 @@
-import axios from 'axios';
+import axios from "axios";
+import { key, proxy } from "../config";
 
 export default class Search {
-    constructor(query) {
-        this.query = query;
+  constructor(query) {
+    this.query = query;
+  }
+
+  async getResults() {
+    try {
+      const res = await axios(
+        `https://forkify-api.herokuapp.com/api/search?&q=${this.query}`
+      );
+      this.result = res.data.recipes;
+      // console.log(this.result);
+    } catch (error) {
+      alert(error);
     }
-    async getResults(query) {
-        const proxy = 'https://cors-anywhere.herokuapp.com/';
-        const key = 'da9b4b838798b506a7700f78df1dde8d';
-        try{
-            const res = await axios(`https://www.food2fork.com/api/search?key=${key}&q=${this.query}`);
-            //instead of return, we simply store in this.result, along with the search are encapsulated inside the object
-            this.result = res.data.recipes; 
-           
-        } catch (error) {
-            alert(error);
-        }
-    }
+  }
 }
-
-
